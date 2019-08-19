@@ -1,9 +1,16 @@
 const db = require('../connect');
 
 module.exports = {
-    getProduct: (callback) => {
-        db.query('SELECT * FROM product', (err, response) => {
-            callback(err, response);
+    getProduct: (data) => {
+        return new Promise((resolve, reject) => {
+            const page = (data.page * data.limit) - data.limit;
+            db.query(`SELECT * FROM product  LIMIT ${page},${data.limit}`, (err, response) => {
+                if (!err) {
+                    resolve(response);
+                } else {
+                    reject(err);
+                }
+            })
         })
     },
 

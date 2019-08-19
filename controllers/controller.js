@@ -2,18 +2,24 @@ const appModel = require("../models/model");
 
 module.exports = {
   getProduct: (req, res) => {
+    const data = {
+      page: req.query.page || 1,
+      limit: req.query.limit || 2
+    }
 
-    appModel.getProduct((err, response) => {
-      const formResponse = {
-        status: 200,
-        data: response
-      };
-      if (err) {
-        console.log(err);
-      } else {
+    appModel.getProduct(data) 
+      .then(response => {
+        const formResponse = {
+          status: 200,
+          data: response
+        };
         res.json(formResponse);
-      }
-    });
+      })
+
+      .catch(err => {
+        console.log(err);
+      });
+    
   },
 
   getProductBy: (req, res) => {
@@ -63,13 +69,7 @@ module.exports = {
 
   updateProduct: (req, res) => { 
     id = req.params.id;
-    const data = {
-      
-      name : req.body.name,
-      type : req.body.type,
-      quantity : req.body.quantity,
-      branch : req.body.branch
-    }
+    const data = req.body
 
     appModel
       .updateProduct(data, id)
