@@ -7,9 +7,11 @@ module.exports = {
         })
     },
 
-    getProductBy: (type) => {
+    getProductBy: (data) => {
         return new Promise((resolve, reject) => {
-            db.query(`SELECT * FROM product WHERE type LIKE '%${type}%'`, (err, response) => {
+            const page = (data.page * data.limit) - data.limit;
+                db.query(`SELECT * FROM product WHERE type LIKE '%${data.type}%' LIMIT ${page},${data.limit}`, (err, response) => {
+            
                 if (!err) {
                     resolve(response);
                 } else {
@@ -19,10 +21,10 @@ module.exports = {
         })
     },
 
-    createProduct: (name, type, quantity, branch) => {
+    createProduct: (data) => {
 
         return new Promise((resolve, reject) => {
-            db.query(`INSERT INTO product SET name='${name}', type='${type}', quantity='${quantity}', branch='${branch}'`, (err, response) => {
+            db.query(`INSERT INTO product SET name='${data.name}', type='${data.type}', quantity='${data.quantity}', branch='${data.branch}'`, (err, response) => {
 
                 if (!err) {
                     resolve(response);
@@ -34,9 +36,9 @@ module.exports = {
         })
     },
 
-    updateProduct: (id, name, type, quantity, branch) => {
+    updateProduct: (data, id) => {
         return new Promise((resolve, reject) => {
-            db.query(`UPDATE product SET name='${name}', type='${type}', quantity='${quantity}', branch='${branch}' WHERE id='${id}'`, (err, response) => {
+            db.query(`UPDATE product SET ? WHERE id='${id}'`,[data], (err, response) => {
 
                 if (!err) {
                     resolve(response);

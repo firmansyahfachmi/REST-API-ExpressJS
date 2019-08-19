@@ -2,6 +2,7 @@ const appModel = require("../models/model");
 
 module.exports = {
   getProduct: (req, res) => {
+
     appModel.getProduct((err, response) => {
       const formResponse = {
         status: 200,
@@ -16,10 +17,14 @@ module.exports = {
   },
 
   getProductBy: (req, res) => {
-    const type = req.params.type;
+    const data = {
+      type: req.query.type,
+      page : req.query.page || 1,
+      limit :  req.query.limit || 2
+    }
 
     appModel
-      .getProductBy(type)
+      .getProductBy(data)
       .then(response => {
         const formResponse = {
           status: 200,
@@ -34,13 +39,14 @@ module.exports = {
   },
 
   createProduct: (req, res) => {
-    const name = req.body.name;
-    const type = req.body.type;
-    const quantity = req.body.quantity;
-    const branch = req.body.branch;
-
+    const data = {
+      name: req.body.name,
+      type : req.body.type,
+      quantity : req.body.quantity,
+      branch : req.body.branch
+    }
     appModel
-      .createProduct(name, type, quantity, branch)
+      .createProduct(data)
 
       .then(response => {
         const formResponse = {
@@ -55,16 +61,18 @@ module.exports = {
       });
   },
 
-  updateProduct: (req, res) => {
-    const id = req.params.id;
-
-    const name = req.body.name;
-    const type = req.body.type;
-    const quantity = req.body.quantity;
-    const branch = req.body.branch;
+  updateProduct: (req, res) => { 
+    id = req.params.id;
+    const data = {
+      
+      name : req.body.name,
+      type : req.body.type,
+      quantity : req.body.quantity,
+      branch : req.body.branch
+    }
 
     appModel
-      .updateProduct(id, name, type, quantity, branch)
+      .updateProduct(data, id)
 
       .then(response => {
         const formResponse = {
