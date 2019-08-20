@@ -1,4 +1,5 @@
-const appModel = require("../models/model");
+const appModel = require("../models/cloth");
+const helper = require("../helpers/formRespon");
 
 module.exports = {
   getProduct: (req, res) => {
@@ -7,36 +8,28 @@ module.exports = {
       limit: req.query.limit || 2
     }
 
-    appModel.getProduct(data) 
+    appModel.getProduct(data)
       .then(response => {
-        const formResponse = {
-          status: 200,
-          data: response
-        };
-        res.json(formResponse);
+        helper.success(res, 200, response);
       })
 
       .catch(err => {
         console.log(err);
       });
-    
+
   },
 
   getProductBy: (req, res) => {
     const data = {
       type: req.query.type,
-      page : req.query.page || 1,
-      limit :  req.query.limit || 2
+      page: req.query.page || 1,
+      limit: req.query.limit || 2
     }
 
     appModel
       .getProductBy(data)
       .then(response => {
-        const formResponse = {
-          status: 200,
-          data: response
-        };
-        res.json(formResponse);
+        helper.success(res, 200, response);
       })
 
       .catch(err => {
@@ -47,19 +40,15 @@ module.exports = {
   createProduct: (req, res) => {
     const data = {
       name: req.body.name,
-      type : req.body.type,
-      quantity : req.body.quantity,
-      branch : req.body.branch
+      type: req.body.type,
+      quantity: req.body.quantity,
+      branch: req.body.branch
     }
     appModel
       .createProduct(data)
 
       .then(response => {
-        const formResponse = {
-          status: 200,
-          data: response
-        };
-        res.json(formResponse);
+        helper.success(res, 200, response);
       })
 
       .catch(err => {
@@ -67,7 +56,7 @@ module.exports = {
       });
   },
 
-  updateProduct: (req, res) => { 
+  updateProduct: (req, res) => {
     id = req.params.id;
     const data = req.body
 
@@ -75,11 +64,7 @@ module.exports = {
       .updateProduct(data, id)
 
       .then(response => {
-        const formResponse = {
-          status: 200,
-          data: response
-        };
-        res.json(formResponse);
+        helper.success(res, 200, response);
       })
 
       .catch(err => {
@@ -94,11 +79,7 @@ module.exports = {
       .deleteProduct(id)
 
       .then(response => {
-        const formResponse = {
-          status: 200,
-          data: response
-        };
-        res.json(formResponse);
+        helper.success(res, 200, response);
       })
 
       .catch(err => {

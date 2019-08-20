@@ -1,4 +1,4 @@
-const db = require('../connect');
+const db = require('../configs/connect');
 
 module.exports = {
     getProduct: (data) => {
