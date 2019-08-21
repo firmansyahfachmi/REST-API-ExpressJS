@@ -10,9 +10,9 @@ Available function in this REST-API :
  <li>Delete data</li>
 </ul>
 
-#### DBMS : Mysql
-
 ## Environment
+
+#### DBMS : Mysql
 
 ```
 PORT = 5000
@@ -24,6 +24,25 @@ DB_DATABASE = 'clothing'
 
 NODE_ENV = 'Development"
 ```
+## Documentation
+
+### Routes
+root : "/cloth"
+
+#### GET All Data
+- "/cloth/" 
+
+#### GET Data by Type
+- "/cloth/type/:type" 
+
+#### POST
+- "/cloth/" 
+
+#### PATCH
+- "/cloth/update/:id" 
+
+#### DELETE
+- "/cloth/delete/:id"-
 
 ## Start Server
 
