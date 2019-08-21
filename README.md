@@ -2,12 +2,12 @@
 <h3>Clothing Shop REST API</h4>
 
 Available function in this REST-API :
-<ul type="circle">
- </li>Get all data</li>
- </li>Get data by Type</li>
- </li>Create data</li>
- </li>Update data</li>
- </li>Delete data</li>
+<ul>
+ <li>Get all data</li>
+ <li>Get data by Type</li>
+ <li>Create data</li>
+ <li>Update data</li>
+ <li>Delete data</li>
 </ul>
 
 ## Environment
@@ -25,5 +25,7 @@ NODE_ENV = 'Development"
 
 ## Start Server
 
-```npm run server```
+```sh
+npm run server
+```
 
