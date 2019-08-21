@@ -1,5 +1,5 @@
-<h1> Bootcamp-Week2 REST-API </h1>
-<h3>Clothing Shop REST API</h4>
+<h1> Bootcamp-Week2 REST-API </h1><br>
+<h3>Clothing Shop REST API</h4><br>
 
 Available function in this REST-API :
 <ul>
@@ -25,7 +25,7 @@ NODE_ENV = 'Development"
 
 ## Start Server
 
-```sh
-npm run server
+```
+$ npm run server
 ```
 
