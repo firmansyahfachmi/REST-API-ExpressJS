@@ -1,4 +1,4 @@
-<h1> Bootcamp-Week2 REST-API </h1><br>
+<h1> Bootcamp-Week2 REST-API </h1>
 <h3>Clothing Shop REST API</h4><br>
 
 Available function in this REST-API :
@@ -10,7 +10,7 @@ Available function in this REST-API :
  <li>Delete data</li>
 </ul>
 
-## Environment
+### Environment
 
 ```
 PORT = 5000
@@ -23,7 +23,7 @@ DB_DATABASE = 'clothing'
 NODE_ENV = 'Development"
 ```
 
-## Start Server
+### Start Server
 
 ```
 $ npm run server
