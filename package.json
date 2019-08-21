@@ -1,7 +1,7 @@
 {
   "name": "week2",
   "version": "1.0.0",
-  "description": "",
+  "description": "clothing shop REST-API",
   "main": "app.js",
   "scripts": {
     "start": "node app",
