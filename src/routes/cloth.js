@@ -5,7 +5,7 @@ const appControl = require('../controllers/cloth');
 
 Route
     .get('/', appControl.getProduct)
-    .get('/type', appControl.getProductBy)
+    .get('/type/:type', appControl.getProductBy)
     .post('/', appControl.createProduct)
     .patch('/update/:id', appControl.updateProduct)
     .delete('/delete/:id', appControl.deleteProduct)

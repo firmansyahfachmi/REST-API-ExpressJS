@@ -5,7 +5,7 @@ module.exports = {
   getProduct: (req, res) => {
     const data = {
       page: req.query.page || 1,
-      limit: req.query.limit || 2
+      limit: req.query.limit || 3
     }
 
     appModel.getProduct(data)
@@ -21,9 +21,9 @@ module.exports = {
 
   getProductBy: (req, res) => {
     const data = {
-      type: req.query.type,
+      type: req.params.type,
       page: req.query.page || 1,
-      limit: req.query.limit || 2
+      limit: req.query.limit || 3
     }
 
     appModel
