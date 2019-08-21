@@ -10,7 +10,9 @@ Available function in this REST-API :
  <li>Delete data</li>
 </ul>
 
-### Environment
+DBMS : Mysql
+
+## Environment
 
 ```
 PORT = 5000
@@ -23,7 +25,7 @@ DB_DATABASE = 'clothing'
 NODE_ENV = 'Development"
 ```
 
-### Start Server
+## Start Server
 
 ```
 $ npm run server
