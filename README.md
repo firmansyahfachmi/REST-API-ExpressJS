@@ -12,8 +12,6 @@ Available function in this REST-API :
 
 ## Environment
 
-#### DBMS : Mysql
-
 ```
 PORT = 5000
 
@@ -24,6 +22,12 @@ DB_DATABASE = 'clothing'
 
 NODE_ENV = 'Development"
 ```
+
+### Start Server
+```
+$ npm run server
+```
+
 ## Documentation
 
 ### Routes
@@ -44,9 +48,4 @@ root : "/cloth"
 #### DELETE
 - "/cloth/delete/:id"-
 
-## Start Server
-
-```
-$ npm run server
-```
 
