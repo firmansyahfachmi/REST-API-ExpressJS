@@ -4,8 +4,7 @@
 Available function in this REST-API :
 <ul>
  <li>Get all data</li>
- <li>Get data by Type</li>
- <li>Get data by Branch</li>
+ <li>Get data by Type or Branch</li>
  <li>Create data</li>
  <li>Update data</li>
  <li>Delete data</li>
@@ -37,11 +36,8 @@ root : "/cloth"
 #### GET All Data
 - "/cloth/" 
 
-#### GET Data by Type
-- "/cloth/type/:type"
-
-#### GET Data by Branch
-- "/cloth/branch/:branch" 
+#### GET Data by Type or Branch
+- "/cloth/type/{type / branch}"
 
 #### POST
 - "/cloth/" 
