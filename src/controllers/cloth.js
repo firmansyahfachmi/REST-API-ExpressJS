@@ -5,35 +5,40 @@ module.exports = {
   getProduct: (req, res) => {
     const data = {
       page: req.query.page || 1,
-      limit: req.query.limit || 3
+      limit: req.query.limit || 10
     }
 
     appModel.getProduct(data)
       .then(response => {
-        helper.success(res, 200, response);
+        helper.result(res, 200, response);
       })
 
       .catch(err => {
-        console.log(err);
+        helper.result(res, 404, err);
       });
 
   },
 
+
   getProductBy: (req, res) => {
+    const quer = Object.keys(req.query);
+    let key = req.query[quer];
+
     const data = {
-      type: req.params.type,
+      query: quer,
+      queryKey: key,
       page: req.query.page || 1,
-      limit: req.query.limit || 3
+      limit: req.query.limit || 10
     }
 
     appModel
       .getProductBy(data)
       .then(response => {
-        helper.success(res, 200, response);
+        helper.result(res, 200, response);
       })
 
       .catch(err => {
-        console.log(err);
+        helper.result(res, 404, err);
       });
   },
 
@@ -48,11 +53,11 @@ module.exports = {
       .createProduct(data)
 
       .then(response => {
-        helper.success(res, 200, response);
+        helper.result(res, 200, response);
       })
 
       .catch(err => {
-        console.log(err);
+        helper.result(res, 404, err);
       });
   },
 
@@ -64,11 +69,11 @@ module.exports = {
       .updateProduct(data, id)
 
       .then(response => {
-        helper.success(res, 200, response);
+        helper.result(res, 200, response);
       })
 
       .catch(err => {
-        console.log(err);
+        helper.result(res, 404, err);
       });
   },
 
@@ -79,11 +84,11 @@ module.exports = {
       .deleteProduct(id)
 
       .then(response => {
-        helper.success(res, 200, response);
+        helper.result(res, 200, response);
       })
 
       .catch(err => {
-        console.log(err);
+        helper.result(res, 404, err);
       });
   }
 };

@@ -4,7 +4,7 @@ module.exports = {
     getProduct: (data) => {
         return new Promise((resolve, reject) => {
             const page = (data.page * data.limit) - data.limit;
-            db.query(`SELECT * FROM product  LIMIT ${page},${data.limit}`, (err, response) => {
+            db.query(`SELECT * FROM product LIMIT ${page},${data.limit}`, (err, response) => {
                 if (!err) {
                     resolve(response);
                 } else {
@@ -17,7 +17,7 @@ module.exports = {
     getProductBy: (data) => {
         return new Promise((resolve, reject) => {
             const page = (data.page * data.limit) - data.limit;
-            db.query(`SELECT * FROM product WHERE type LIKE '%${data.type}%' LIMIT ${page},${data.limit}`, (err, response) => {
+            db.query(`SELECT * FROM product WHERE ${data.query} LIKE '%${data.queryKey}%' LIMIT ${page},${data.limit}`, (err, response) => {
 
                 if (!err) {
                     resolve(response);
