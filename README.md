@@ -60,6 +60,6 @@ root : "/cloth"
 - "/cloth/update/:id" 
 
 #### DELETE
-- "/cloth/delete/:id"-
+- "/cloth/delete/:id"
 
 
