@@ -10,15 +10,29 @@ Available function in this REST-API :
  <li>Delete data</li>
 </ul>
 
-## Environment
+## Prerequiste
+- Node.js - Download and Install [Node.js](https://nodejs.org/en/) with [NVM](https://github.com/creationix/nvm) (Node Version Manager) - Simple bash script to manage multiple active node.js versions.
+- MySQL - Download and Install [MySQL](https://www.mysql.com/downloads/) - Make sure it's running on the default port.
+- Postman - Download and Install [Postman](https://www.getpostman.com/downloads) - Implementation with postman latest version.
+
+## Installation
+
+### Clone
+```
+$ git clone https://github.com/firmansyahfachmi/Bootcamp-Week2.git
+$ cd Bootcamp-Week2
+$ npm install
+```
+
+### Environment
 
 ```
-PORT = 5000
+SERVER_PORT = YOUR-PORT
 
-DB_HOST = 'localhost'
-DB_USER = 'root'
-DB_PASSWORD = ''
-DB_DATABASE = 'clothing'
+DB_HOST = "YOU-DB-HOST"
+DB_USER = "YOUR-DB-USER"
+DB_PASSWORD = "YOUR-DB-PASSWORD"
+DB_NAME = "YOUR-DB-NAME"
 
 NODE_ENV = 'Development"
 ```
