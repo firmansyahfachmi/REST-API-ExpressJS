@@ -1,4 +1,4 @@
-<h1> REST-API </h1>
+<h1> REST-API-ExpressJS</h1>
 <h3>Clothing Shop REST API</h4><br>
 
 Available function in this REST-API :
